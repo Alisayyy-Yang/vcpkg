@@ -3,7 +3,8 @@ if(VCPKG_CMAKE_SYSTEM_NAME STREQUAL "WindowsStore")
 endif()
 
 if(VCPKG_CRT_LINKAGE STREQUAL static)
-  message(FATAL_ERROR "Google benchmark only supports dynamic crt linkage.")
+    message(STATUS "Warning: Static building not supported yet. Building dynamic.")
+    set(VCPKG_CRT_LINKAGE dynamic)
 endif()
 
 if (VCPKG_LIBRARY_LINKAGE STREQUAL dynamic)
