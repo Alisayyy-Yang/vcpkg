@@ -1,6 +1,7 @@
 
 if(NOT VCPKG_CRT_LINKAGE STREQUAL "dynamic")
-  message(FATAL_ERROR "PDCurses only supports dynamic CRT linkage")
+  message(STATUS "PDCurses doesn't support static CRT linkage. Building dynamic instead.")
+  set(VCPKG_CRT_LINKAGE dynamic)
 endif()
 
 include(vcpkg_common_functions)
